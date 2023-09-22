@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>video</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="./vid.css">  
+    
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Rajdhani:wght@400;500&display=swap');
+</style>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <!-- <form method="post">
+                <input type="file" id="upload" accept="video/mp4" onchange="uploadd()"/>
+                <div id="response"></div>
+                <p id="message"></p>
+            </form> -->
+            <img src="./Asset-2.png" alt="">
+        </div>
+        <div class="section">      
+           <div class="left">
+                <div class="yellow">
+                    <div class="ul-li">
+                        <div class="ul-label">assets</div>
+                        <div class="ul-container">
+                            <ul>
+                                <!-- <li>
+                                    <div>resize/<span>img</span></div>
+                                </li>
+                                <li>
+                                    <div>overlay-px/<span>mp4</span></div>
+                                </li>
+                                <li>
+                                    <div>concat-og/<span>obj</span></div>
+                                </li>
+                                <li>
+                                    <div>original-image/<span>obj</span></div>
+                                </li>
+                                <li>
+                                    <div>resize/<span>img</span></div>
+                                </li>
+                                <li>
+                                    <div>overlay-px/<span>mp4</span></div>
+                                </li>
+                                <li>
+                                    <div>concatenated-og/<span>obj</span></div>
+                                </li>
+                                <li>
+                                    <div>original-image/<span>obj</span></div>
+                                </li> -->
+                            </ul>
+                        </div>
+                        <div class="ul-buttons">
+                            <div><button>video</button></div>
+                            <div><button>image</button></div>
+                            <div><button type="button" onclick="trim()">audio</button></div>
+                            <div><button type="button" onclick="newLi()">object</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="orange">
+                    <div class="orange-container">
+                        <div>
+                            <button id="trimId">Trim</button>
+                        </div>
+                        <div class="tab-display trim">
+                            <div class="orange-tabs">
+                                <div class="container">
+                                    <div class="tabs-title">
+                                        <div class="title-el">
+                                            <div class="title-title">
+                                                <form>
+                                                    <div>
+                                                        <label for="trimTitle">title/</label>
+                                                        <input type="text" id="trimTitle" name="name" placeholder="type here"/>
+                                                        <button>save</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="title-space"></div>
+                                            <div class="title-button">
+                                                <div class="button-circle">
+                                                    <div class="circle-green" onclick="saveTrim()"></div>
+                                                    <div class="circle-yellow"></div>
+                                                    <div class="circle-red" onclick="stuff('trim')"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabs-body">
+                                        <div class="body-el">
+                                            <div class="body-el-el">
+                                                <div class="body-el-trim">
+                                                    trim/
+                                                </div>
+                                                <div>
+                                                    <div class="body-el-select-file">
+                                                        <form>
+                                                            <div>
+                                                                <div>
+                                                                    <label for="trim-name">select file/</label>
+                                                                    <input type="text" id="trim-name" placeholder="type here"/>
+                                                                </div>
+                                                                <div>
+                                                                    <button type="button" onclick="changeEl('l', 'trim-name')"><</button>
+                                                                    <button type="button" onclick="changeEl('r', 'trim-name')">></button>
+                                                                    <!-- <button>save</button> -->
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="body-el-selected">
+                                                    <ul>
+                                                        <!-- <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li> -->
+                                                    </ul>
+                                                </div>
+                                                <div class="body-el-duration">
+                                                    duration/
+                                                </div>
+                                                <div class="body-el-duration-el">
+                                                    <div>
+                                                        <form>
+                                                            <div>
+                                                                <label for="tname">start/</label>
+                                                                <input type="text" id="startName" name="name" placeholder="type here"/>
+                                                                <label for="tname">end/</label>
+                                                                <input type="text" id="endName" name="name" placeholder="type here"/>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div></div>
+                                                </div>
+                                            </div>
+                                            <div class="body-el-button">
+                                                <div>
+                                                    <button onclick="exportTrim()">export/</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body-files"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button id="concatId">Concat</button>
+                        </div>
+                        <div class="tab-display concat">
+                            <div class="orange-tabs">
+                                <div class="container">
+                                    <div class="tabs-title">
+                                        <div class="title-el">
+                                            <div class="title-title">
+                                                <form>
+                                                    <div>
+                                                        <label for="concat-name">title/</label>
+                                                        <input type="text" id="concat-name" name="name" placeholder="type here"/>
+                                                        <button>save</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="title-space"></div>
+                                            <div class="title-button">
+                                                <div class="button-circle">
+                                                    <div class="circle-green" onclick="saveConcat()"></div>
+                                                    <div class="circle-yellow" onclick="removeLi()"></div>
+                                                    <div class="circle-red" onclick="stuff('concat')"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabs-body">
+                                        <div class="body-el">
+                                            <div class="body-el-el">
+                                                <div class="allign-concat">
+                                                    <div class="body-el-trim">
+                                                        <div>
+                                                            allign/
+                                                        </div>
+                                                    </div>
+                                                    <div class="blue-button">horizontal</div>
+                                                    <div class="blue-button">vertical</div>
+                                                </div>
+                                                <div>
+                                                    <div class="body-el-select-file">
+                                                        <form>
+                                                            <div>
+                                                                <div>
+                                                                    <label for="concat-file-allign">select file/</label>
+                                                                    <input type="text" id="concat-file-allign" name="name" placeholder="type here"/>
+                                                                </div>
+                                                                <div>
+                                                                    <button id="1" type="button" onclick="changeEl('l', 'concat-file-allign')"><</button>
+                                                                    <button id="11" type="button" onclick="changeEl('r', 'concat-file-allign')">></button>
+                                                                    <!-- <button>save</button> -->
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="body-el-selected concat-allign">
+                                                    <ul>
+                                                        <!-- <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li> -->
+                                                    </ul>
+                                                </div>
+                                                <div class="body-el-trim">
+                                                    merge/
+                                                </div>
+                                                <div>
+                                                    <div class="body-el-select-file">
+                                                        <form>
+                                                            <div>
+                                                                <div>
+                                                                    <label for="concat-file-merge">select file/</label>
+                                                                    <input type="text" id="concat-file-merge" name="name" placeholder="type here"/>
+                                                                </div>
+                                                                <div>
+                                                                    <button id="2" type="button" onclick="changeEl('l', 'concat-file-merge')"><</button>
+                                                                    <button id="21" type="button" onclick="changeEl('r', 'concat-file-merge')">></button>
+                                                                    <!-- <button>save</button> -->
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="body-el-selected concat-merge">
+                                                    <ul>
+                                                        <!-- <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li> -->
+                                                    </ul>
+                                                </div>
+                                                <div class="body-el-duration">
+                                                    position/
+                                                </div>
+                                                <div class="body-el-duration-el">
+                                                    <div>
+                                                        <form>
+                                                            <div>
+                                                                <label for="tname">top/</label>
+                                                                <input type="text" id="tname" name="name" placeholder="type here"/>
+                                                                <label for="tname">bottom/</label>
+                                                                <input type="text" id="tname" name="name" placeholder="type here"/>
+                                                            </div>
+                                                            <div>
+                                                                <label for="tname">left/</label>
+                                                                <input type="text" id="tname" name="name" placeholder="type here"/>
+                                                                <label for="tname">right/</label>
+                                                                <input type="text" id="tname" name="name" placeholder="type here"/>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="body-el-duration">
+                                                    resize/
+                                                </div>
+                                                <div class="body-el-duration-el">
+                                                    <div>
+                                                        <form>
+                                                            <div>
+                                                                <label for="tname">width/</label>
+                                                                <input type="text" id="tname" name="name" placeholder="type here"/>
+                                                                <label for="tname">heigth/</label>
+                                                                <input type="text" id="tname" name="name" placeholder="type here"/>
+                                                            </div>                                                    </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="body-el-button">
+                                                <div>
+                                                    <button type="button" onclick="exportConcat()">export/</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body-files"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button id="overlayId">Overlay</button>
+                        </div>
+                        <div class="tab-display overlay">
+                            <div class="orange-tabs">
+                                <div class="container">
+                                    <div class="tabs-title">
+                                        <div class="title-el">
+                                            <div class="title-title">
+                                                <form>
+                                                    <div>
+                                                        <label for="overlayInput">title/</label>
+                                                        <input type="text" id="overlayInput" name="name" placeholder="type here"/>
+                                                        <button>save</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="title-space"></div>
+                                            <div class="title-button">
+                                                <div class="button-circle">
+                                                    <div class="circle-green" onclick="saveOverlay()"></div>
+                                                    <div class="circle-yellow"></div>
+                                                    <div class="circle-red" onclick="stuff('overlay')"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabs-body">
+                                        <div class="body-el">
+                                            <div class="body-el-el">
+                                                <div class="body-el-trim">
+                                                    z index - 0/
+                                                </div>
+                                                <div>
+                                                    <div class="body-el-select-file">
+                                                        <form>
+                                                            <div>
+                                                                <div>
+                                                                    <label for="overlay-file-zero">select file/</label>
+                                                                    <input type="text" id="overlay-file-zero" name="name" placeholder="type here"/>
+                                                                </div>
+                                                                <div>
+                                                                    <button id="3" type="button" onclick="changeEl('l', 'overlay-file-zero')"><</button>
+                                                                    <button id="31" type="button" onclick="changeEl('r', 'overlay-file-zero')">></button>
+                                                                    <!-- <button>save</button> -->
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="body-el-selected overlay-zero">
+                                                    <ul>
+                                                        <!-- <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li> -->
+                                                    </ul>
+                                                </div>
+                                                <div class="body-el-trim">
+                                                    z index - 1/
+                                                </div>
+                                                <div>
+                                                    <div class="body-el-select-file">
+                                                        <form>
+                                                            <div>
+                                                                <div>
+                                                                    <label for="overlay-file-one">select file/</label>
+                                                                    <input type="text" id="overlay-file-one" name="name" placeholder="type here"/>
+                                                                </div>
+                                                                <div>
+                                                                    <button id="4" type="button" onclick="changeEl('l', 'overlay-file-one')"><</button>
+                                                                    <button id="41" type="button" onclick="changeEl('r', 'overlay-file-one')">></button>
+                                                                    <!-- <button>save</button> -->
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="body-el-selected overlay-one">
+                                                    <ul>
+                                                        <!-- <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li> -->
+                                                    </ul>
+                                                </div>
+                                                <div class="body-el-duration">
+                                                    position/
+                                                </div>
+                                                <div class="body-el-duration-el">
+                                                    <div>
+                                                        <form>
+                                                            <div>
+                                                                <label for="topOverlay">top/</label>
+                                                                <input type="text" id="topOverlay" name="name" placeholder="type here"/>
+                                                                <!-- <label for="tname">bottom/</label>
+                                                                <input type="text" id="tname" name="name" placeholder="type here"/> -->
+                                                            </div>
+                                                            <div>
+                                                                <label for="leftOverlay">left/</label>
+                                                                <input type="text" id="leftOverlay" name="name" placeholder="type here"/>
+                                                                <!-- <label for="tname">right/</label>
+                                                                <input type="text" id="tname" name="name" placeholder="type here"/> -->
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="body-el-duration">
+                                                    resize/
+                                                </div>
+                                                <div class="body-el-duration-el">
+                                                    <div>
+                                                        <form>
+                                                            <div>
+                                                                <label for="widthOverlay">width/</label>
+                                                                <input type="text" id="widthOverlay" name="name" placeholder="type here"/>
+                                                                <label for="heightOverlay">heigth/</label>
+                                                                <input type="text" id="heightOverlay" name="name" placeholder="type here"/>
+                                                            </div>                                                    </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="body-el-button">
+                                                <div>
+                                                    <button type="button" onclick="exportOverlay()">export/</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body-files"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button id="convertId">Convert/mp4</button>
+                        </div>
+                        <div class="tab-display convert">
+                            <div class="orange-tabs">
+                                <div class="container">
+                                    <div class="tabs-title">
+                                        <div class="title-el">
+                                            <div class="title-title">
+                                                <form>
+                                                    <div>
+                                                        <label for="convertMp">title/</label>
+                                                        <input type="text" id="convertMp" name="name" placeholder="type here"/>
+                                                        <button>save</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="title-space"></div>
+                                            <div class="title-button">
+                                                <div class="button-circle">
+                                                    <div class="circle-green" onclick="saveConvert()"></div>
+                                                    <div class="circle-yellow"></div>
+                                                    <div class="circle-red" onclick="stuff('convert')"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabs-body">
+                                        <div class="body-el">
+                                            <div class="body-el-el">
+                                                <div class="body-el-trim">
+                                                    convert to mp4/
+                                                </div>
+                                                <div>
+                                                    <div class="body-el-select-file">
+                                                        <form>
+                                                            <div>
+                                                                <div>
+                                                                    <label for="convertmp-file">select file/</label>
+                                                                    <input type="text" id="convertmp-file" name="name" placeholder="type here"/>
+                                                                </div>
+                                                                <div>
+                                                                    <button id="5" type="button" onclick="changeEl('l', 'convertmp-file')"><</button>
+                                                                    <button id="51" type="button" onclick="changeEl('r', 'convertmp-file')">></button>
+                                                                    <!-- <button>save</button> -->
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="body-el-selected convert">
+                                                    <ul>
+                                                        <!-- <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li> -->
+                                                    </ul>
+                                                </div>
+                                                <div class="body-el-duration">
+                                                    duration/
+                                                </div>
+                                                <div class="body-el-duration-el">
+                                                    <div>
+                                                        <form>
+                                                            <div>
+                                                                <label for="tname">duration/</label>
+                                                                <input type="text" id="convertDuration" name="name" placeholder="type here"/>
+                                                                <!-- <label for="tname">end/</label>
+                                                                <input type="text" id="tname" name="name" placeholder="type here"/> -->
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div></div>
+                                                </div>
+                                            </div>
+                                            <div class="body-el-button">
+                                                <div>
+                                                    <button type="button" onclick="exportConvert()">export/</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body-files"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button id="audioId">audio</button>
+                        </div>
+                        <div class="tab-display audio">
+                            <div class="orange-tabs">
+                                <div class="container">
+                                    <div class="tabs-title">
+                                        <div class="title-el">
+                                            <div class="title-title">
+                                                <form>
+                                                    <div>
+                                                        <label for="audioInput">title/</label>
+                                                        <input type="text" id="audioInput" name="name" placeholder="type here"/>
+                                                        <button>save</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="title-space"></div>
+                                            <div class="title-button">
+                                                <div class="button-circle">
+                                                    <div class="circle-green" onclick="saveAudio()"></div>
+                                                    <div class="circle-yellow"></div>
+                                                    <div class="circle-red" onclick="stuff('audio')"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabs-body">
+                                        <div class="body-el">
+                                            <div class="body-el-el">
+                                                <div class="body-el-trim">
+                                                    remove audio/
+                                                </div>
+                                                <div>
+                                                    <div class="body-el-select-file">
+                                                        <form>
+                                                            <div>
+                                                                <div>
+                                                                    <label for="remove-audio-file">select video/</label>
+                                                                    <input type="text" id="remove-audio-file" name="name" placeholder="type here"/>
+                                                                </div>
+                                                                <div>
+                                                                    <button id="6" type="button" onclick="changeEl('l', 'remove-audio-file')"><</button>
+                                                                    <button id="61" type="button" onclick="changeEl('r', 'remove-audio-file')">></button>
+                                                                    <!-- <button>save</button> -->
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="body-el-selected first">
+                                                    <ul>
+                                                        <!-- <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li> -->
+                                                    </ul>
+                                                </div>
+                                                <div class="body-el-trim">
+                                                    add audio/
+                                                </div>
+                                                <div>
+                                                    <div class="body-el-select-file">
+                                                        <form>
+                                                            <div>
+                                                                <div>
+                                                                    <label for="select-audio-file">select audio/</label>
+                                                                    <input type="text" id="select-audio-file" name="name" placeholder="type here"/>
+                                                                </div>
+                                                                <br>
+                                                                <div>
+                                                                    <button id="7" type="button" onclick="changeEl('l', 'select-audio-file')"><</button>
+                                                                    <button id="71" type="button" onclick="changeEl('r', 'select-audio-file')">></button>
+                                                                    <!-- <button>save</button> -->
+                                                                </div>
+                                                            </div>
+                                                            <div class="body-el-selected second">
+                                                                <ul>
+                                                                    <!-- <li>
+                                                                        <div>one.mp4</div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div>one.mp4</div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div>one.mp4</div>
+                                                                    </li> -->
+                                                                </ul>
+                                                            </div>
+                                                            <div>
+                                                                <div>
+                                                                    <label for="select-video-file">select video/</label>
+                                                                    <input type="text" id="select-video-file" name="name" placeholder="type here"/>
+                                                                </div>
+                                                                <div>
+                                                                    <button id="8" type="button" onclick="changeEl('l', 'select-video-file')"><</button>
+                                                                    <button id="81" type="button" onclick="changeEl('r', 'select-video-file')">></button>
+                                                                    <!-- <button>save</button> -->
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="body-el-selected third">
+                                                    <ul>
+                                                        <!-- <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>one.mp4</div>
+                                                        </li> -->
+                                                    </ul>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="body-el-button">
+                                                <div>
+                                                    <button type="button" onclick="exportAudio()">export/</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body-files"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layers">
+                    <div class="layer-list-container">
+                        <div class="layer-list">
+                            <ul>
+                                <li>
+                                    <div>
+                                        <div class="list-circle">
+                                            <div></div>
+                                        </div>
+                                        <div class="list-item">
+                                            oh-five
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="list-circle">
+                                            <div></div>
+                                        </div>
+                                        <div class="list-item">
+                                            audio
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="list-circle">
+                                            <div></div>
+                                        </div>
+                                        <div class="list-item">
+                                            merge
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="list-circle">
+                                            <div></div>
+                                        </div>
+                                        <div class="list-item">
+                                            orange-boat
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="list-circle">
+                                            <div></div>
+                                        </div>
+                                        <div class="list-item">
+                                            sunset
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <div class="list-circle">
+                                            <div></div>
+                                        </div>
+                                        <div class="list-item">
+                                            dancing
+                                        </div>
+                                    </div>
+                                </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="video">
+                    <div class="videoElement">
+                        <video id="video" width="750" controls="controls">
+                            <source src="./two-man-standing.mp4" type="video/mp4">
+                            <!-- <source src="./videos/default-dude.mp4" type="video/mp4"> -->
+                        </video>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="sliderButton">
+
+                    </div>
+                    <div class="sliderHandle">
+                        <div>
+                            <div class="timeText">
+                                <div>00:00</div>
+                                <div></div>
+                                <div>00:45</div>  
+                            </div>
+                         <div class="scrollEffect">
+                            <ul>
+                                <li>
+                                    <div class="greenSlider active" >
+                                        <div class="touchPoint">
+                                            <div class="timeDisplay">
+                                                <div class="tdStart">00</div>
+                                                <div></div>
+                                                <div class="tdEnd">00</div>
+                                            </div>
+                                            <div class="greenSliderRelative">
+                                                <div class="grey start"></div>
+                                                <div class="greenHandle">
+                                                    <div class="greyHandle start"></div>
+                                                    <div class="greenPart"></div>
+                                                    <div class="greyHandle end"></div>
+                                                </div>
+                                                <div class="grey end"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="greenSlider x" onclick="openGreenSLider()">
+                                        <div>
+                                            <div class="timeDisplay x">
+                                                <div class="tdStart x">00</div>
+                                                <div></div>
+                                                <div class="tdEnd x">00</div>
+                                            </div>
+                                            <div class="greenSliderRelativex">
+                                                <div class="greyxx"></div>
+                                                <div class="greenHandlex">
+                                                    <div class="greyHandlexx"></div>
+                                                    <div class="greenPartx"></div>
+                                                    <div class="greyHandlexy"></div>
+                                                </div>
+                                                <div class="greyxy"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                         </div>
+                        </div>
+                    </div>
+                    <div class="sliderScroll">
+
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="search">
+                    <img src="./Asset-1.png" alt="">
+                </div>
+            </div>
+            <div class="aside">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js">
+    </script>
+
+</body>
+</html>
+
